@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Drowning Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{{ url_for('static', filename='css/materialize.css')}}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<!--  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>-->
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container" ><a id="logo-container" href="#" class="brand-logo"> Ria Soam 101803258</a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Drowning Prevention</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predicting the probability of a person, whether he/she is drowning.
+        <br>
+        </h5>
+      </div>
+<br>
+              <div class="row">
+    <form action="../predict" method="POST" class="col s12">
+      <div class="row">
+       
+        <div class="input-field col s4">
+            <label for="first_name"><b>Heart Beat</b></label>
+            <br>
+          <input placeholder="Heartbeat in Beats per min (60-110)" name="heartbeat" id="first_name" type="number" class="validate" required>
+        </div>
+        
+          <div class="input-field col s4">
+
+          <label for="last_name"><b>Systolic Blood Pressure </b></label>
+            <br>
+          <input id="last_name" name="systolicbp" placeholder="Systolic Blood Pressure in mmHg (75-130)"  type="number" class="validate" required>
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="_name"><b>Diastolic Blood Pressure</b></label>
+            <br>
+          <input id="_name" name="diastolicbp" placeholder="Diastolic Blood Pressure in mmHg (55-85)" type="number" class="validate" required>
+        </div>
+        
+         <div class="input-field col s4" align="center">
+            <label for="_name"><b>SP02</b></label>
+            <br>
+          <input id="_name" name="spo2" placeholder="SP02% (85-101)" type="number" class="validate" required>
+        </div>
+      
+     </div>
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Predict Probability</button>
+      </div>
+    </form>
+      </div>
+      
+        <h4 align="center"><b>{{result}}</b></h4>
+      
+    </div>
+  </div>
+
+
+    <br><br>
+  
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{{ url_for('static', filename='js/materialize.js') }}"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
